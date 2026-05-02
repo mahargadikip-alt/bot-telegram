@@ -2,7 +2,8 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 import os
 
-TOKEN = "8793079113:AAEeSaHwXKzdFx0cJ8lCKxsS_guUHBeUMr0"
+import os
+TOKEN = os.getenv("TOKEN")
 
 # ======================
 # MENU UTAMA
@@ -90,7 +91,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await query.message.reply_photo(
             photo=open(qris, "rb"),
-            caption=f"{produk[query.data]}\n\n📌 Scan QRIS untuk pembayaran"
+            caption=f"{produk[query.data]}\n\n📌 Scan QRIS untuk pembayaran\n\n📩 Kirim bukti transfer ke @Ownervviptrusted"
         )
 
     # ======================
@@ -111,7 +112,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await query.message.reply_photo(
             photo=open(qris, "rb"),
-            caption=f"{produk[query.data]}\n\n📌 Scan QRIS untuk pembayaran"
+            caption=f"{produk[query.data]}\n\n📌 Scan QRIS untuk pembayaran\n\n📩 Kirim bukti transfer ke @Ownervviptrusted"
         )
 
     # ======================
